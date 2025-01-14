@@ -1,1 +1,1 @@
-# p15__arduino__-elif-__xan_perez
+Simulación con tres pulsadores por comando "if", "else" y "elif"
