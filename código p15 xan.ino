@@ -6,8 +6,8 @@ Xan Pérez Iglesias
 14/01/2025   10:15 A.M.
 **************************************************************/
 
-//C++ code
-//
+//Mnemónica de definición de pines:
+//Sentencia de preprocesamiento del compilador
 
 #define botonA = 10;
 #define botonB = 9;
@@ -24,9 +24,9 @@ void setup() {
 }
 
 void loop() {
-  int A = digitalRead(10); 
-  int B = digitalRead(9);
-  int C = digitalRead(8);
+  int A = digitalRead(10); //Defínese A como variable enteira
+  int B = digitalRead(9); //Defínese B como variable enteira
+  int C = digitalRead(8); //Defínese C como variable enteira
 
   if (A == LOW || B == LOW || C == LOW) {
     digitalWrite(13, HIGH);
