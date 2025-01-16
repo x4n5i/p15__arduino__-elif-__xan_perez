@@ -6,113 +6,35 @@ Xan Pérez Iglesias
 14/01/2025   10:15 A.M.
 **************************************************************/
 
-//Mnemónica de definición de pines:
-//Sentencia de preprocesamiento del compilador
+//Función a cumplir (Simplificada)
+//f == not a * b + a * c
 
-#define botonA = 10;
-#define botonB = 9;
-#define botonC = 8;
-#define ledPin_1 = 13;
-#define ledPin_2 = 12;
+#define A     10
+#define B      9
+#define C      8
+#define LAMP  11
 
-void setup() {
-  pinMode(10, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(8, OUTPUT);
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
+int a = 0;
+int b = 0;
+int c = 0;
+char condicion;
+
+void setup(){
+  pinMode(A, INPUT);
+  pinMode(B, INPUT);
+  pinMode(C, INPUT);
+  pinMode(LAMP, OUTPUT);     
 }
 
-void loop() {
-  int A = digitalRead(10); //Defínese A como variable enteira
-  int B = digitalRead(9); //Defínese B como variable enteira
-  int C = digitalRead(8); //Defínese C como variable enteira
-
-  if (A == LOW || B == LOW || C == LOW) {
-    digitalWrite(13, HIGH);
-    digitalWrite(12, LOW);
-    digitalWrite(10, HIGH);
-    digitalWrite(9, HIGH);
-    digitalWrite(8, HIGH);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == LOW || B == LOW || C == HIGH){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, HIGH);
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == LOW || B == HIGH || C == LOW){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, HIGH);
-    digitalWrite(9, LOW);
-    digitalWrite(8, HIGH);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == LOW || B == HIGH || C == HIGH){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, HIGH);
-    digitalWrite(9, LOW);
-    digitalWrite(8, LOW);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == HIGH || B == LOW || C == LOW){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(9, HIGH);
-    digitalWrite(8, HIGH);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == HIGH || B == LOW || C == HIGH){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(9, HIGH);
-    digitalWrite(8, LOW);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == HIGH || B == HIGH || C == LOW){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(8, HIGH);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
-  } else if (A == HIGH || B == HIGH || C == HIGH){
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    digitalWrite(10, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(8, LOW);
-    delay(4000);
-    digitalWrite(13, LOW);
-    digitalWrite(12, HIGH);
-    delay(4000);
+void loop(){
+  a = digitalRead(A);
+  b = digitalRead(B);
+  c = digitalRead(C);
+  if(!a && b && !c || !a &&b && c || a && !b && c || a && b && c){
+     digitalWrite(LAMP, HIGH);
   } else {
-    digitalWrite(13, LOW);
-    digitalWrite(12, LOW);
-    digitalWrite(10, LOW);
-    digitalWrite(9, LOW);
-    digitalWrite(8, LOW);
+     digitalWrite(LAMP, LOW);
   }
+
 }
+
