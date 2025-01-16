@@ -1,9 +1,12 @@
 /**************************************************************
 PRÁCTICA Nº.15:
-Realización de porta OR con tres pulsadores mediante código C.
+Realización de porta lóxica con tres pulsadores mediante código 
+en C/C++.
+Mediante código prenderemos unha bombilla usanco un conmutador de
+4 entradas de tipo STDP.
 Requisito de usar comando "if" y "else".
 Xan Pérez Iglesias
-14/01/2025   10:15 A.M.
+16/01/2025   10:06 A.M.
 **************************************************************/
 
 //Función a cumplir (Simplificada)
